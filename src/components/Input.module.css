@@ -5,7 +5,6 @@ align-items: center;
 border-radius: 8px;
 width: 638px;
 height: 54px;
-flex: 1 0 0;
 margin: auto;
 margin-top: -25px;
 border: 1px solid var(--Gray-700, #0D0D0D);
