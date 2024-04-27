@@ -4,6 +4,6 @@
   justify-content: center;
 
   padding: 5rem 0.625rem;
-  
+  flex: 1;
   background-color: var(--gray-700);
 }
