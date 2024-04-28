@@ -46,18 +46,22 @@ export function Input(){
         <ListHeader lengthTasks={tasks.length} />
       </div>
 
-      <div>
-        {tasks.map((task) => {
-          return (
-            <List
-              key={task.id}
-              id={task.id}
-              text={task.text}
-              onDeleteTask={deleteTask}
-            />
-          )
-        })}
-      </div>
+      {tasks.length > 0 ? (
+        <div>
+          {tasks.map((task) => {
+            return (
+              <List
+                key={task.id}
+                id={task.id}
+                text={task.text}
+                onDeleteTask={deleteTask}
+              />
+            )
+          })}
+        </div>
+      ) : (
+        <Empty/>
+      )}
     </main>
   )
 }
