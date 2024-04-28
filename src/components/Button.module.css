@@ -1,0 +1,10 @@
+button {
+  background-color: var(--blue);
+  color: var(--gray-100);
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+}
