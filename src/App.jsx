@@ -11,7 +11,6 @@ function App() {
         <div className={styles.taskInfo}>
           <Input  />
         </div>
-
       </section>
     </>
   )

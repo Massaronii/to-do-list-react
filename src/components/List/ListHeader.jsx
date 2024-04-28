@@ -1,9 +1,6 @@
-import { useState } from "react"
 import styles from "./ListHeader.module.css"
 
-export function ListHeader({lengthTasks}) {
-  const [lengthCompletedTasks, setLengthCompletedTasks] = useState(0)
-
+export function ListHeader({ lengthTasks, completTasks }) {
   return (
     <header className={styles.container}>
       <div className={styles.flex}>
@@ -13,7 +10,7 @@ export function ListHeader({lengthTasks}) {
 
       <div className={styles.flex}>
         <p className={styles.tarefasConcluidas}>Concluidas</p>
-        <span className={styles.span}>{lengthCompletedTasks}</span>
+        <span className={styles.span}>{completTasks}</span>
       </div>
     </header>
   )
