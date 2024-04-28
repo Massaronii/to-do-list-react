@@ -6,25 +6,25 @@ import { v4 as uuidv4 } from "uuid"
 import { ListHeader } from "./List/ListHeader"
 
 export function Input(){
-  const formatTask = {
-    id: Number,
-    isComplet:Boolean,
-    content: String,
-  }
+ 
+  const [newTaskText, setNewTaskText] = useState("")
 
   const [task, setTask] = useState([])
 
    function handleCreateNewTask() {
     event.preventDefault()
 
-    const newTaskText = event.target.comment.value
-
     setTask([...task, newTaskText])
+    setNewTaskText("")
    }
 
-   function createTask(task) {
-    console.log(`${task}`)
+   function handleNewTaskChange() {
+    setNewTaskText(event.target.value)
    }
+
+   function deleteTask(task){
+    console.log(`deletar ${task}`)
+   }   
 
   return (
     <main>
@@ -33,7 +33,8 @@ export function Input(){
           className={styles.input}
           type="text"
           placeholder="Adicone uma  nova tarefa"
-          name="comment"
+          value={newTaskText}
+         onChange={handleNewTaskChange}
         />
         <button className={styles.button}>Criar +</button>
       </form>
@@ -46,9 +47,10 @@ export function Input(){
         {task.map((task) => {
           return (
             <List
-              key={task.id}
+              key={uuidv4()}
+              id={uuidv4()}
               text={task}
-              isComplete={task.isComplete}
+              onDeleteTask={deleteTask}
             />
           )
         })}
