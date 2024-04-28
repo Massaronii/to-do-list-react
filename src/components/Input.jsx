@@ -9,21 +9,24 @@ export function Input(){
  
   const [newTaskText, setNewTaskText] = useState("")
 
-  const [task, setTask] = useState([])
+  const [tasks, setTasks] = useState([])
 
-   function handleCreateNewTask() {
-    event.preventDefault()
+    function handleCreateNewTask(event) {
+      event.preventDefault()
 
-    setTask([...task, newTaskText])
-    setNewTaskText("")
-   }
+      if (newTaskText.trim() !== "") {
+        setTasks([...tasks, { id: uuidv4(), text: newTaskText }])
+        setNewTaskText("")
+      }
+    }
 
    function handleNewTaskChange() {
     setNewTaskText(event.target.value)
    }
 
-   function deleteTask(task){
-    console.log(`deletar ${task}`)
+   function deleteTask(taskIdToDelete) {
+   const updatedTasks = tasks.filter((task) => task.id !== taskIdToDelete)
+   setTasks(updatedTasks)
    }   
 
   return (
@@ -44,12 +47,12 @@ export function Input(){
       </div>
 
       <div>
-        {task.map((task) => {
+        {tasks.map((task) => {
           return (
             <List
-              key={uuidv4()}
-              id={uuidv4()}
-              text={task}
+              key={task.id}
+              id={task.id}
+              text={task.text}
               onDeleteTask={deleteTask}
             />
           )
