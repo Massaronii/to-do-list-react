@@ -6,34 +6,20 @@ import { v4 as uuidv4 } from "uuid"
 import { ListHeader } from "./List/ListHeader"
 
 export function Input(){
+  const formatTask = {
+    id: Number,
+    isComplet:Boolean,
+    content: String,
+  }
 
-
-  const tasks = [
-    {
-      id: uuidv4(),
-      title: "terminar desafio",
-      isComplete: false,
-    },
-    {
-      id: uuidv4(),
-      title: "terminar de estudar",
-      isComplete: false,
-    },
-    {
-      id: uuidv4(),
-      title: "terminar ",
-      isComplete: false,
-    },
-  ]
-
-  const [task, setTask] = useState([
-  ])
+  const [task, setTask] = useState([])
 
    function handleCreateNewTask() {
     event.preventDefault()
 
-    setTask([...task, task.length +1 ])
-    console.log(task)
+    const newTaskText = event.target.comment.value
+
+    setTask([...task, newTaskText])
    }
 
    function createTask(task) {
@@ -42,12 +28,12 @@ export function Input(){
 
   return (
     <main>
-
       <form onSubmit={handleCreateNewTask}>
         <input
           className={styles.input}
           type="text"
           placeholder="Adicone uma  nova tarefa"
+          name="comment"
         />
         <button className={styles.button}>Criar +</button>
       </form>
@@ -57,11 +43,11 @@ export function Input(){
       </div>
 
       <div>
-        {tasks.map((task) => {
+        {task.map((task) => {
           return (
             <List
               key={task.id}
-              text={task.title}
+              text={task}
               isComplete={task.isComplete}
             />
           )
