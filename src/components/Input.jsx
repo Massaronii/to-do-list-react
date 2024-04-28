@@ -37,13 +37,13 @@ export function Input(){
           type="text"
           placeholder="Adicone uma  nova tarefa"
           value={newTaskText}
-         onChange={handleNewTaskChange}
+          onChange={handleNewTaskChange}
         />
         <button className={styles.button}>Criar +</button>
       </form>
 
       <div>
-        <ListHeader />
+        <ListHeader lengthTasks={tasks.length} />
       </div>
 
       <div>
