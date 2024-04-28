@@ -29,3 +29,8 @@
   
   transition: 0.2s background-color;
 }
+
+button:hover {
+  background-color: red;
+}
+

@@ -1,6 +1,6 @@
 import styles from "./List.module.css"
 
-export function List() {
+export function List(props) {
   return (
     <div className={styles.container}>
       <div className={styles.flex}>
