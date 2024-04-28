@@ -4,6 +4,7 @@ import { Input } from './components/Input'
 import { Button } from './components/Button'
 import { ListHeader } from "./components/List/ListHeader"
 import {Empty} from "./components/List/Empty"
+import { List } from "./components/List/List"
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
         <div>
           <ListHeader />
         </div>
-        <Empty/>
+        <List/>
       </section>
     </>
   )

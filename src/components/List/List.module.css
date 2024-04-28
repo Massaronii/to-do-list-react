@@ -1,0 +1,31 @@
+.container {
+  padding: 16px;
+  display: flex;
+  margin-top: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  background-color: var(--gray-500);
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+  gap: 12px;
+ 
+  align-items: center;
+}
+
+.checkbox {
+  height: 13px;
+  width: 20px;
+}
+
+.container button {
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+
+  padding: 5px 4px 2px 4px;
+  
+  transition: 0.2s background-color;
+}
