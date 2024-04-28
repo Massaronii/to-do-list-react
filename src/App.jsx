@@ -2,6 +2,7 @@ import styles from "./App.module.css"
 import { Header } from './components/Header'
 import { Input } from './components/Input'
 import { Button } from './components/Button'
+import { ListHeader } from "./components/List/ListHeader"
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       </div>
 
       <div>
-        
+        <ListHeader/>
       </div>
       </section>
     </>

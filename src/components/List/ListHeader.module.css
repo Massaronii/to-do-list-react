@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  margin-top: 65px;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  gap: 8px;
+}
+
+.tarefasCriadas {
+  color: var(--blue);
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.tarefasConcluidas {
+  color: var(--purple);
+  font-size: 14px;
+}
+
+.span {
+   background-color: var(--gray-500);
+  padding: 2px 8px;
+  color: white;
+  border-radius: 999px;
+}

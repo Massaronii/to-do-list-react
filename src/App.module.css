@@ -1,7 +1,10 @@
+.container {
+  width: 736px;
+  margin: auto;
+}
+
 .taskInfo {
  display: flex;
-width: 736px;
 align-items: center;
-gap: 8px;
 margin: -25px auto auto auto;
 }
