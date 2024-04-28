@@ -1,13 +1,12 @@
 import styles from "./List.module.css"
 
-export function List(props) {
+export function List({text}) {
   return (
     <div className={styles.container}>
       <div className={styles.flex}>
       <input type="checkbox" name="checkbox" className={styles.checkbox}/>
       <p>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
+        {text}
       </p>
       </div>
      
